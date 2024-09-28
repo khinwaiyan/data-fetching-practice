@@ -1,8 +1,4 @@
 import type { Comment, Post } from './types';
-export type PostApi = {
-  getPosts: () => Promise<Post[]>;
-  getPostComments: (postId: number) => Promise<Comment[]>;
-};
 
 // 모든 포스트 받아오기
 export const getPosts = async (): Promise<Post[]> => {
