@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { getPostComments } from '../utils/postApi';
 import type { Comment, Post } from '../utils/types';
-
 type PostDetailProps = {
   selectedPost: Post | undefined;
 };
@@ -42,7 +41,9 @@ export const PostDetail: React.FC<PostDetailProps> = ({ selectedPost }) => {
       <div className="CommentWrapper">
         <h1 className="text-3xl">댓글</h1>
         {loadingComments ? (
-          <div>Loading comments....</div>
+          <div className="CommentList flex justify-center items-center h-96">
+            <div className="w-8 h-8 border-4 border-t-4 border-gray-200 border-t-pink-500 rounded-full animate-spin"></div>
+          </div>
         ) : (
           <div className="CommentList divide-y-2 divide-solid">
             {comments.map((comment) => (
