@@ -11,7 +11,7 @@ export const getPosts = async (): Promise<Post[]> => {
     return data;
   } catch (error) {
     console.error('Error fetching posts:', error);
-    throw error; // Re-throw the error to handle it in the caller function
+    throw error;
   }
 };
 
