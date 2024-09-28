@@ -29,7 +29,11 @@ export const App = () => {
   const selectedPost = posts.find((post) => post.id === selectedPostId);
   return (
     <div className="Wrapper flex divide-x-2 divide-solid">
-      <PostList posts={posts} onClickPost={setSelectedPostId} />
+      <PostList
+        selectedPostId={selectedPostId}
+        posts={posts}
+        onClickPost={setSelectedPostId}
+      />
       <PostDetail selectedPost={selectedPost} />
     </div>
   );
