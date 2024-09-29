@@ -1,6 +1,6 @@
 import type { Post } from '../utils/types';
 type PostListProps = {
-  selectedPostId: number;
+  selectedPostId?: number;
   posts: Post[];
   onClickPost: (id: number) => void;
 };

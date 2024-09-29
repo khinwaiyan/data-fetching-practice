@@ -10,7 +10,7 @@ import type { Post } from './utils/types';
 
 export const App = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [selectedPostId, setSelectedPostId] = useState<number>(1);
+  const [selectedPostId, setSelectedPostId] = useState<number>();
   useEffect(() => {
     let ignore = false;
     getPosts()
@@ -26,7 +26,8 @@ export const App = () => {
       ignore = true;
     };
   }, []);
-  const selectedPost = posts.find((post) => post.id === selectedPostId);
+  const selectedPost =
+    posts.find((post) => post.id === selectedPostId) ?? posts.at(0);
   return (
     <div className="Wrapper flex divide-x-2 divide-solid">
       <PostList
